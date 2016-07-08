@@ -1,26 +1,27 @@
-/* SuperSlide1.2 --  Copyright 2012 ´ó»°Ö÷Ï¯ 
+/* SuperSlide1.2 --  Copyright 2012 å¤§è¯ä¸»å¸­ 
  */
 (function($){
 	$.fn.slide=function(options){
 		$.fn.slide.deflunt={
-		effect : "fade", //Ğ§¹û || fade£º½¥ÏÔ£» || top£ºÉÏ¹ö¶¯£»|| left£º×ó¹ö¶¯£»|| topLoop£ºÉÏÑ­»·¹ö¶¯£»|| leftLoop£º×óÑ­»·¹ö¶¯£»|| topMarquee£ºÉÏÎŞ·ìÑ­»·¹ö¶¯£»|| leftMarquee£º×óÎŞ·ìÑ­»·¹ö¶¯£»
-		autoPlay:false, //×Ô¶¯ÔËĞĞ
-		delayTime : 500, //Ğ§¹û³ÖĞøÊ±¼ä
-		interTime : 2500,//×Ô¶¯ÔËĞĞ¼ä¸ô¡£µ±effectÎªÎŞ·ì¹ö¶¯µÄÊ±ºò£¬Ïàµ±ÓÚÔËĞĞËÙ¶È¡£
-		defaultIndex : 0,//Ä¬ÈÏµÄµ±Ç°Î»ÖÃË÷Òı¡£0ÊÇµÚÒ»¸ö
-		titContainer:".hd",//µ¼º½ÔªËØ
-		needScrollNav: false,//ÊÇ·ñĞèÒª¹ö¶¯µ¼º½
-		titCell:".hd li",//µ¼º½ÔªËØ
-		mainCell:".bd",//ÄÚÈİÔªËØµÄ¸¸²ã¶ÔÏó
-		trigger: "mouseover",//´¥·¢·½Ê½ || mouseover£ºÊó±êÒÆ¹ı´¥·¢£»|| click£ºÊó±êµã»÷´¥·¢£»
-		scroll:1,//Ã¿´Î¹ö¶¯¸öÊı¡£
-		vis:1,//visible£¬¿ÉÊÓ·¶Î§¸öÊı£¬µ±ÄÚÈİ¸öÊıÉÙÓÚ¿ÉÊÓ¸öÊıµÄÊ±ºò£¬²»Ö´ĞĞĞ§¹û¡£
-		titOnClassName:"on",//µ±Ç°Î»ÖÃ×Ô¶¯Ôö¼ÓµÄclassÃû³Æ
-		autoPage:false,//ÏµÍ³×Ô¶¯·ÖÒ³£¬µ±ÎªtrueÊ±£¬titCellÔòÎªµ¼º½ÔªËØ¸¸²ã¶ÔÏó£¬Í¬Ê±ÏµÍ³»áÔÚtitCellÀïÃæ×Ô¶¯²åÈë·ÖÒ³liÔªËØ(1.2°æ±¾ĞÂÔö)
-		prevCell:".prev",//Ç°Ò»¸ö°´Å¥ÔªËØ¡£
-		nextCell:".next",//ºóÒ»¸ö°´Å¥ÔªËØ¡£
-		hoverStop: true, // Êó±ê»¬¹ıÄÚÈİÊ±£¬ÊÇ·ñÍ£Ö¹Ğ§¹û
-		responsive: false // ÏìÓ¦Ê½
+		effect : "fade", //æ•ˆæœ || fadeï¼šæ¸æ˜¾ï¼› || topï¼šä¸Šæ»šåŠ¨ï¼›|| leftï¼šå·¦æ»šåŠ¨ï¼›|| topLoopï¼šä¸Šå¾ªç¯æ»šåŠ¨ï¼›|| leftLoopï¼šå·¦å¾ªç¯æ»šåŠ¨ï¼›|| topMarqueeï¼šä¸Šæ— ç¼å¾ªç¯æ»šåŠ¨ï¼›|| leftMarqueeï¼šå·¦æ— ç¼å¾ªç¯æ»šåŠ¨ï¼›
+		autoPlay:false, //è‡ªåŠ¨è¿è¡Œ
+		delayTime : 500, //æ•ˆæœæŒç»­æ—¶é—´
+		interTime : 2500,//è‡ªåŠ¨è¿è¡Œé—´éš”ã€‚å½“effectä¸ºæ— ç¼æ»šåŠ¨çš„æ—¶å€™ï¼Œç›¸å½“äºè¿è¡Œé€Ÿåº¦ã€‚
+		defaultIndex : 0,//é»˜è®¤çš„å½“å‰ä½ç½®ç´¢å¼•ã€‚0æ˜¯ç¬¬ä¸€ä¸ª
+		titContainer:".hd",//å¯¼èˆªå…ƒç´ 
+		needScrollNav: false,//æ˜¯å¦éœ€è¦æ»šåŠ¨å¯¼èˆª
+		titCell:".hd li",//å¯¼èˆªå…ƒç´ 
+		mainCell:".bd",//å†…å®¹å…ƒç´ çš„çˆ¶å±‚å¯¹è±¡
+		trigger: "mouseover",//è§¦å‘æ–¹å¼ || mouseoverï¼šé¼ æ ‡ç§»è¿‡è§¦å‘ï¼›|| clickï¼šé¼ æ ‡ç‚¹å‡»è§¦å‘ï¼›
+		scroll:1,//æ¯æ¬¡æ»šåŠ¨ä¸ªæ•°ã€‚
+		vis:1,//visibleï¼Œå¯è§†èŒƒå›´ä¸ªæ•°ï¼Œå½“å†…å®¹ä¸ªæ•°å°‘äºå¯è§†ä¸ªæ•°çš„æ—¶å€™ï¼Œä¸æ‰§è¡Œæ•ˆæœã€‚
+		titOnClassName:"on",//å½“å‰ä½ç½®è‡ªåŠ¨å¢åŠ çš„classåç§°
+		autoPage:false,//ç³»ç»Ÿè‡ªåŠ¨åˆ†é¡µï¼Œå½“ä¸ºtrueæ—¶ï¼ŒtitCellåˆ™ä¸ºå¯¼èˆªå…ƒç´ çˆ¶å±‚å¯¹è±¡ï¼ŒåŒæ—¶ç³»ç»Ÿä¼šåœ¨titCellé‡Œé¢è‡ªåŠ¨æ’å…¥åˆ†é¡µliå…ƒç´ (1.2ç‰ˆæœ¬æ–°å¢)
+		prevCell:".prev",//å‰ä¸€ä¸ªæŒ‰é’®å…ƒç´ ã€‚
+		nextCell:".next",//åä¸€ä¸ªæŒ‰é’®å…ƒç´ ã€‚
+		hoverStop: true, // é¼ æ ‡æ»‘è¿‡å†…å®¹æ—¶ï¼Œæ˜¯å¦åœæ­¢æ•ˆæœ
+		afterSplide: false, // å›è°ƒå‡½æ•°
+		responsive: false // å“åº”å¼
 		};
 
 		return this.each(function() {
@@ -28,12 +29,12 @@
 			var index=opts.defaultIndex;
 			var prevBtn = $(opts.prevCell, $(this));
 			var nextBtn = $(opts.nextCell, $(this));
-			var navObj = $(opts.titCell, $(this));//µ¼º½×ÓÔªËØ½áºÏ
+			var navObj = $(opts.titCell, $(this));//å¯¼èˆªå­å…ƒç´ ç»“åˆ
 			var navObjSize = navObj.size();
-			var navContainer = $(opts.titContainer , $(this));//µ¼º½ÔªËØ¸¸²ã¶ÔÏó
+			var navContainer = $(opts.titContainer , $(this));//å¯¼èˆªå…ƒç´ çˆ¶å±‚å¯¹è±¡
 			var needScrollNav = opts.needScrollNav;
 			
-			var conBox = $(opts.mainCell , $(this));//ÄÚÈİÔªËØ¸¸²ã¶ÔÏó
+			var conBox = $(opts.mainCell , $(this));//å†…å®¹å…ƒç´ çˆ¶å±‚å¯¹è±¡
 			var conBoxSize=conBox.children().size();
 			var slideH=0;
 			var slideW=0;
@@ -41,7 +42,7 @@
 			var selfH=0;
 			var autoPlay = opts.autoPlay;
 			var responsive = opts.responsive;
-			var inter=null;//setIntervalÃû³Æ 
+			var inter=null;//setIntervalåç§° 
 			var oldIndex = index;
 			
 			var container = $(this);
@@ -50,32 +51,32 @@
 			
 			var isHove = false;
 
-			if(conBoxSize<=opts.vis) return; //µ±ÄÚÈİ¸öÊıÉÙÓÚ¿ÉÊÓ¸öÊı£¬²»Ö´ĞĞĞ§¹û¡£
+			if(conBoxSize<=opts.vis) return; //å½“å†…å®¹ä¸ªæ•°å°‘äºå¯è§†ä¸ªæ•°ï¼Œä¸æ‰§è¡Œæ•ˆæœã€‚
 			
-			// ÏìÓ¦Ê½´¦Àí
+			// å“åº”å¼å¤„ç†
 			if (responsive) {
 				$(window).resize(function() {
 					resize();
 				});
 			}
 
-			//´¦Àí·ÖÒ³
+			//å¤„ç†åˆ†é¡µ
 			if( navObjSize==0 )navObjSize=conBoxSize;
 			if( opts.autoPage ){
 				var tempS = conBoxSize-opts.vis;
 				navObjSize=1+parseInt(tempS%opts.scroll!=0?(tempS/opts.scroll+1):(tempS/opts.scroll)); 
 				navObj.html(""); 
 				for( var i=0; i<navObjSize; i++ ) { navObj.append("<li>"+(i+1)+"</li>"); }
-				navObj = $("li", navObj);//ÖØÖÃµ¼º½×ÓÔªËØ¶ÔÏó
+				navObj = $("li", navObj);//é‡ç½®å¯¼èˆªå­å…ƒç´ å¯¹è±¡
 			}
 
-			conBox.children().each(function(){ //È¡×î´óÖµ
+			conBox.children().each(function(){ //å–æœ€å¤§å€¼
 				if( $(this).width()>selfW ){ selfW=$(this).width(); slideW=$(this).outerWidth(true);  }
 				if( $(this).height()>selfH ){ selfH=$(this).height(); slideH=$(this).outerHeight(true);  }
 			});
 			
 			var responsiveSize = function() {
-				if (responsive) { // ÏìÓ¦Ê½´¦Àí, ½«¿í¶ÈÉèÖÃ¾ù·Ö£¬¸ß¶ÈÈ«ÆÌ
+				if (responsive) { // å“åº”å¼å¤„ç†, å°†å®½åº¦è®¾ç½®å‡åˆ†ï¼Œé«˜åº¦å…¨é“º
 					containerW = container.width();
 					containerH = container.height();
 					
@@ -89,7 +90,7 @@
 				}
 			};
 			
-			responsiveSize(); // ÏìÓ¦Ê½´¦Àí, ½«¿í¶ÈÉèÖÃ¾ù·Ö
+			responsiveSize(); // å“åº”å¼å¤„ç†, å°†å®½åº¦è®¾ç½®å‡åˆ†
 			//console.log(selfW + " | " + slideW);
 			
 			switch(opts.effect)
@@ -136,7 +137,7 @@
 				}
 			};
 			
-			//Ğ§¹ûº¯Êı
+			//æ•ˆæœå‡½æ•°
 			var doPlay=function(){
 				switch(opts.effect)
 				{
@@ -216,7 +217,7 @@
 				
 				var onObj = navObj.eq(index);
 				
-				// ½«µ¼º½¹ö¶¯µ½ÊÓÍ¼ÄÚ
+				// å°†å¯¼èˆªæ»šåŠ¨åˆ°è§†å›¾å†…
 				if (needScrollNav && ! isHove) {
 					var ol = onObj.offset().left - navContainer.offset().left;
 					navContainer.animate({ scrollLeft : ol + 'px'}, 'slow');
@@ -228,12 +229,16 @@
 				navObj.removeClass(opts.titOnClassName);
 				onObj.addClass(opts.titOnClassName);
 				oldIndex=index;
+				
+				if(opts.afterSplide) {
+					opts.afterSplide(index);
+				}
 			};
 			
-			//³õÊ¼»¯Ö´ĞĞ
+			//åˆå§‹åŒ–æ‰§è¡Œ
 			doPlay();
 
-			//×Ô¶¯²¥·Å
+			//è‡ªåŠ¨æ’­æ”¾
 			if (autoPlay) {
 				if ( opts.effect=="leftMarquee" || opts.effect=="topMarquee"  ) {
 					index++; 
@@ -274,7 +279,7 @@
 				}
 			}
 
-			//Êó±êÊÂ¼ş
+			//é¼ æ ‡äº‹ä»¶
 			var mst;
 			if(opts.trigger=="mouseover"){
 				navObj.hover(function() { 
